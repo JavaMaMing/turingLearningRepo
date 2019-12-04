@@ -16,6 +16,11 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="UserMapper.xml"/>
+        <mapper resource="mybatis/UserMapper.xml"/>
+        <!--<mapper class="com.mamm.learning.mapper.UserMapper"/>-->
+        <!--<package name="com.mamm.learning.mapper"/>-->
+<!--
+        <mapper url="file//D:/Git/turingLearningRepo/mybatislearning/src/main/resources/mybatis/UserMapper.xml"/>
+-->
     </mappers>
 </configuration>

@@ -1,4 +1,4 @@
-package test;
+package com.mamm.learning.entity;
 
 public class User {
     private Integer id;
