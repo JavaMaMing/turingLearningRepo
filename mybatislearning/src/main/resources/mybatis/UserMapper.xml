@@ -3,13 +3,33 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.mamm.learning.mapper.UserMapper">
-
-    <select id="findAll" resultType="com.mamm.learning.entity.User">
-        select * from USER
+    
+    <sql id="baseSql">
+        select * from user
+    </sql>
+    
+    <select id="findAll" resultType="User">
+        <include refid="baseSql"></include>
     </select>
-
     <select id="getUser" parameterType="java.lang.Integer" resultType="java.util.Map">
         select * from user where id = #{id}
+    </select>
+
+    <insert id="insertUser" parameterType="com.mamm.learning.entity.User">
+        insert into user (id,username,age,phone,des) values (#{id},#{userName},#{age},#{phone},#{des})
+    </insert>
+
+    <update id="updateUser" parameterType="com.mamm.learning.entity.User">
+        update user set username=#{userName},age=#{age} where id = #{id}
+    </update>
+
+    <delete id="deleteUser" parameterType="java.lang.Integer">
+        delete from user where id = #{id}
+    </delete>
+
+    <!--带条件查询-->
+    <select id="findByCondition" parameterType="java.util.Map" resultType="com.mamm.learning.entity.User">
+        select * from user where username like '%${userName}%' and <![CDATA[age > #{age}]]>
     </select>
 
 </mapper>

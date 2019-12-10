@@ -4,12 +4,25 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <properties resource="application.properties"/>
+    <!--别名-->
+    <typeAliases>
+        <typeAlias type="com.mamm.learning.entity.User" alias="User"/>
+    </typeAliases>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>
-            <dataSource type="POOLED">
+            <!--自带的数据连接池-->
+            <!--<dataSource type="POOLED">
                 <property name="driver" value="${driver}"/>
                 <property name="url" value="${url}"/>
+                <property name="username" value="${username}"/>
+                <property name="password" value="${password}"/>
+            </dataSource>-->
+            <!--使用阿里druid连接池-->
+            <dataSource type="com.mamm.learning.utils.DruidDataSourceFactory" >
+                <property name="driverClass" value="${driver}"/>
+                <property name="jdbcUrl" value="${url}"/>
                 <property name="username" value="${username}"/>
                 <property name="password" value="${password}"/>
             </dataSource>
