@@ -1,0 +1,10 @@
+com\mamm\learning\MybatisTest.class
+com\mamm\learning\utils\DruidDataSourceFactory.class
+com\mamm\learning\generator\dao\UserMapper.class
+com\mamm\learning\generator\entity\User.class
+com\mamm\learning\entity\User.class
+com\mamm\learning\generator\entity\UserExample.class
+com\mamm\learning\mapper\UserMapper.class
+com\mamm\learning\generator\entity\UserExample$GeneratedCriteria.class
+com\mamm\learning\generator\entity\UserExample$Criteria.class
+com\mamm\learning\generator\entity\UserExample$Criterion.class
